@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JQuery Tutorial</title>
+
+  <style type="text/css">
+  .highlight { background-color: yellow; }
+  </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+
+<body>
+  <div id="wrapper">
+  <h1>Random Stuff</h1>
+  <p id="p_one"><img src="ntt-logo.png" id="logo2" alt="NTT Logo" height="180" width="180">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <em>Aenean pretium</em>, ipsum quis ultrices aliquet, lacus urna ultrices odio, eu interdum tortor tortor quis ligula. Morbi finibus auctor ipsum vel tempus. Nullam gravida leo ac iaculis pretium. In pretium varius nisi, quis tristique ipsum semper vitae. Mauris eu aliquet odio. Pellentesque tristique sem turpis, id gravida nunc consequat vel. Nullam nec condimentum magna.<a href="#">Sed dignissim interdum risus ac mattis.</a> In hac habitasse <b>platea</b> dictumst. Vivamus <em>placerat tristique</em> vestibulum. Pellentesque quis eleifend nisl. Quisque mollis aliquam enim eu ullamcorper.
+
+  <p id="p_two">Lor  ipsum <em>dolor</em> sit amet,<a href="google.com">anytime anything cool out ap gonna psycho</a><b>consectetur adipiscing elit. Aenean pretium, ipsum quis ultrices aliquet, lacus urna ultrices odio, eu interdum tortor tortor quis ligula. <a href="mailto:derekbanas@verizon.net">Morbi finibus</a> auctor ipsum vel tempus. Nullam gravida leo ac iaculis pretium. In pretium varius nisi, quis tristique ipsum semper vitae. Mauris eu aliquet odio. Pellentesque tristique sem turpis, id <a href="http://google.com">gravida nunc consequat</a> vel. Nullam nec condimentum magna. Sed dignissim interdum risus ac mattis. <a href="http://www.newthinktank.com/wordpress/PersonalityTest.pdf">In hac habitasse</a> platea dictumst. Vivamus placerat tristique vestibulum. Pellentesque quis eleifend nisl. Quisque mollis aliquam enim eu ullamcorper.</p>
+
+  <p id="p_three">Lorem ipsum dolor sit amet, this is it.consectetur adipiscing elit. Aenean pretium, ipsum quis <i>ultrices</i> aliquet, lacus urna ultrices odio, eu interdum tortor tortor quis ligula.</p>
+
+  <table id="tableData">
+  <caption>Baseball</caption>
+  <thead>
+  <tr>
+  <td colspan="4">Best Baseball Players</td>
+  </tr>
+  </thead>
+  <tfoot>
+  <tr><td colspan="4">* Hall of Fame</td></tr>
+  </tfoot>
+  <tbody>
+  <tr>
+  <td></td>
+  <td>Average</td>
+  <td>RBIs</td>
+  <td>Homeruns</td>
+  </tr>
+  <tr>
+  <td><a href="#">Hank Aaron*</a></td>
+  <td id="chk">.305</td>
+  <td>2297</td>
+  <td>755</td>
+  </tr>
+  <tr>
+  <td><a href="#">Babe Ruth*</a></td>
+  <td>.342</td>
+  <td>2214</td>
+  <td>714</td>
+  </tr>
+  <tr>
+  <td><a href="#">Barry Bonds</a></td>
+  <td>.298</td>
+  <td>1996</td>
+  <td>762</td>
+  </tr>
+  </tbody>
+  </table>
+
+  <h2 id="bestSelling">Best Selling Childrens Books</h2>
+
+  <ol id="oListTypes">
+  <li>Harry Potter
+  <ol id="oListIndent">
+  <li>and the Sorcerer's Stone</li>
+  <li>and the Half-Blood Prince</li>
+  <li>and the Chamber of Secrets</li>
+  <li>Prisoner of Azkaban</li>
+  <li name="best_book">and the Goblet of Fire</li>
+  <li>and the Order of the Phoenix</li>
+  <li>and the Deathly Hallows</li>
+  </ol>
+  </li>
+  <li>The Very Hungry Caterpillar</li>
+  </ol>
+
+  <input type="text" id="yourName" size="50">
+
+  <input type="text" id="listStuff" size="50"><br />
+
+  <h2 id="trackEvents">Tracking Events</h2>
+
+  Mouse Click : X : <input type="text" id="mClickXPos">
+  Y : <input type="text" id="mClickYPos"><br />
+
+  Mouse Move : X : <input type="text" id="mMoveXPos">
+  Y : <input type="text" id="mMoveYPos"><br />
+
+  Key Pressed : <input type="text" id="keyPressed"><br />
+
+  <span id="formEvent">Form Event</span> : <input type="text" id="inputFormEvent"><br /><br />
+
+  <img src="1.jpg" id="accident" alt="accident" height="200" width="200">
+
+  <div id="jsonData"></div>
+
+  <button type="button" id="getData">Get Data</button>
+
+  <script type="text/javascript">
+
+    $("document").ready(function(){
+      $("#wrapper").css("width",500);
+      $("#wrapper").css("margin", "auto");
+      $("#logo2").css({
+      "float": "left"
+      //"width":"500"
+    });
+      $("#p_two").css("color", "purple");
+      $("#p_two").css({
+        "background" : "url('pink.png') repeat-y"
+      });
+      $("a").css('color', 'red');
+      $("#tableData a").css("color", "green");
+      $("em + a").css("color", "orange");
+      //$("#p_two").css({
+        //"background" : "url('pink.png') repeat-y"
+      $("p > em").css("color", "gray");
+      $("#oListIndent li:nth-child(3)").css("color", "red");
+      $("li[name]").html("hacked and changed by jquery");
+      $("li[name]").attr("align","right");
+      $("input[type='text']#yourName").val("Derek");
+      $("a[href*='google']").css("font-weight", "bolder").css("color","cyan");
+      $("img[alt^='NT']").css({
+        "border-color":"black",
+        "border-width":"1px",
+        "border-style":"solid"
+      });
+      $("a[href^='g']").css("color", "#000000");//it is for black
+      //$("#logo2").attr('src',"pink.png");
+      $("#tableData tr:even").css({
+        "background-color":"green"
+      });
+      $("#tableData tr:odd").css({
+        "background-color":"blue"
+      });
+      $("#tableData").attr('align','center');
+      $("#tableData tr #chk:nth-child(2)").css("color","white");
+      $("#oListIndent li:nth-child(2)").css("color","gray");
+      $("#oListTypes li:not(:contains('and'))").css("color", "red");
+      $("a:contains('Morbi')").css("color", "blue");
+      $("p:has(i)").html('<i>sorry, the jquery is on action</i>').show();
+
+      //can also use hide() to hide any element
+
+      $("p:has(i)").append("<u>This is the append</u>");//prepend
+      $("p:has(i)").after("<p id='after_p'>Hey there after, wassupp</p>");
+      $("p:has(i)").after("<p id='before_p'>Hey before there, wassupp</p>");
+      $("#after_p").click(function(){
+        alert($("p:has(i)").text());//$(this).remove();
+      });
+
+      $("#before_p").click(function(){
+        $(this).replaceWith("<p>I'm the new paragraph</p>'");
+      });
+
+      //to show the contents of all thelist into a text bar
+      $("#oListIndent li").each(function(index){
+        var inputListStuff=$("#listStuff").val();
+        $("#listStuff").val(inputListStuff+","+$(this).text());
+      });///////  still not clear to me
+
+      //to change the color of whole class items
+      $("#oListIndent li").addClass("Harry_Potter");
+      $(".Harry_Potter").css("color", "#36454F");
+      //alert($("p:has(h1)").html());
+      $("#oListIndent li").click(function(){
+        $(this).toggleClass("highlight");
+        var bgColor = $(this).css("background-color");
+        $("input[type=text]#yourName").val(bgColor);
+      });
+      $("#logo2").click(function(){
+        var src_img = $(this).attr("src");
+        $("input[type=text]#yourName").val(src_img);
+      });
+      $("#logo2").mouseover(function(){
+        $(this).attr("src", "barcelona.png");
+      }).mouseout(function(){
+        $(this).attr("src", "ntt-logo.png");
+      });
+      //also called hover
+
+      $("h2").hover(
+        function(){
+        $(this).css("color", "green");
+      },
+        function(){
+        $(this).css("color", "black");
+      });
+      $("#logo2").dblclick(function(){
+        $(this).attr("src", "mcu.png");
+      });
+      //track the mouse pointer while clicking
+      $(document).click(function(e){
+        $("#mClickXPos").val(e.pageX);
+        $("#mClickYPos").val(e.pageY);
+      });
+
+      //for storing the mouse movement
+      $(document).mousemove(function(e){
+        $("#mMoveXPos").val(e.screenX);
+        $("#mMoveYPos").val(e.screenY);
+      });
+
+      $(document).keypress(function(e){
+        var keyPressed = String.fromCharCode(e.which);
+        $("#keyPressed").val(keyPressed);
+      });
+
+      $("#inputFormEvent").blur(function(){
+        $("#formEvent").text("Left input element");
+      });
+
+      var accidentImgs = ["1.jpg","2.jpg", "3.jpg", "4.jpg"];
+      var foc =1;
+
+      $("#accident").click(function(){
+        var imgs = accidentImgs[foc];
+        foc++;
+        if(foc>3){
+          foc=0;
+        }
+        $("#accident").attr("src", imgs);
+      });
+
+      $("#p_one").click(function(){
+        $(this).hide();
+      });
+
+      $("#p_two").click(function(){
+        $(this).fadeOut(2000);
+        $("#p_one").fadeToggle(2000);
+      });
+});
+    </script>
+</div>
+</body>
+</html>
